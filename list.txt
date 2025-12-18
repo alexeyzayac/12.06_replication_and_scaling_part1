@@ -39,4 +39,4 @@
 ###########
 
 # На master создаётся БД: myslq/master/database_test.sql
-# На slave проверка myslq/slave/database_test.sql
+# На slave проверка БЛ: myslq/slave/database_test.sql
