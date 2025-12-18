@@ -1,0 +1,10 @@
+CREATE USER 'repl'@'%' IDENTIFIED BY 'slavepass';
+GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';
+GRANT REPLICATION CLIENT ON *.* TO 'repl'@'%';
+FLUSH PRIVILEGES;
+
+SELECT user, host FROM mysql.user;
+
+SHOW MASTER STATUS;
+
+exit;

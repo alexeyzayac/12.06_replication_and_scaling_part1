@@ -1,0 +1,42 @@
+###########
+# Задание 2
+###########
+
+# Имеется 2 сервера: 
+# computer-vm-1 (master) - IP: 10.0.1.27
+# computer-vm-2 (slave) - IP: 10.0.1.20
+
+# Поднимите чистый инстанс MySQL версии 8.0+ на обоих серверах:
+1. sudo apt update
+2. sudo apt install -y mysql-server
+3. sudo systemctl enable --now mysql
+
+# Добавляем в конец для использования имён:
+4. sudo nano /etc/hosts
+    # 10.0.1.27 master
+    # 10.0.1.20 slave
+
+# Изменить bind-address на master
+5. sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+    # изменить bind-address на 0.0.0.0
+
+# Настройка конфига для master и slave:
+6. sudo nano /etc/mysql/conf.d/mysql.cnf
+    # myslq/master/mysql.conf
+    # myslq/slave/mysql.conf
+7. sudo systemctl restart mysql
+
+# Вход в MySQL для master и создание пользователя репликации: 
+8. sudo mysql
+    # myslq/master/master.sql
+
+# Вход в MySQL для slave и настройка подключения к master: 
+9. sudo mysql
+    # myslq/slave/slave.sql
+
+###########
+# Тэст
+###########
+
+# На master создаётся БД: myslq/master/database_test.sql
+# На slave проверка myslq/slave/database_test.sql
