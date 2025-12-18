@@ -57,12 +57,12 @@
 
 **Мастер статус**
 
-![img](img/screenshot_1.png)
+![img](img/img_1.png)
 
 **Реплика статус**
 
-![img](img/screenshot_2.png)
+![img](img/img_2.png)
 
 **Тест БД на реплике**
 
-![img](img/screenshot_3.png)
+![img](img/img_3.png)
